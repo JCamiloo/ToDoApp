@@ -1,3 +1,4 @@
+import { Lista } from './../../models/lista.model';
 import { Component } from '@angular/core';
 import { DeseosService } from 'src/app/services/deseos.service';
 import { Router } from '@angular/router';
@@ -49,5 +50,9 @@ export class Tab1Page {
       ]
     });
     alert.present();
+  }
+
+  listaSeleccionada(lista:Lista){
+    this.router.navigateByUrl(`/tabs/tab1/agregar/${lista.id}`);
   }
 }

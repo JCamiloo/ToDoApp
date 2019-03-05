@@ -41,6 +41,18 @@ export class AgregarPage implements OnInit {
     }
   }
 
+  async borrarItem(i:number){
+    this.lista.items.splice(i,1);
+    this.deseoService.guardarLista();
+    const toast = await this.toastCtrl.create({
+      message: 'Item eliminado',
+      duration: 1500,
+      position: 'bottom'
+    });
+    
+    toast.present();
+  }
+
   cambioCheck(){
     //Filter regresa una colección de elementos que cumplan una condición 
     //Retorna arreglo con todos los items pendientes
@@ -54,7 +66,6 @@ export class AgregarPage implements OnInit {
       this.lista.terminadaEn = null;
       this.lista.terminada = false;
     }
-
     this.deseoService.guardarLista();    
   }
 
