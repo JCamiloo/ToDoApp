@@ -49,7 +49,6 @@ export class AgregarPage implements OnInit {
       duration: 1500,
       position: 'bottom'
     });
-    
     toast.present();
   }
 
@@ -68,5 +67,4 @@ export class AgregarPage implements OnInit {
     }
     this.deseoService.guardarLista();    
   }
-
 }
